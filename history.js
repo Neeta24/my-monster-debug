@@ -1,6 +1,8 @@
 const histories = document.getElementById("histories");
-
+console.log(histories);
 function addHistory(questionText, timeTaken, errorCount) {
+  
+  
   const newRow = document.createElement("div");
   newRow.classList.add("card");
 
@@ -14,11 +16,12 @@ function addHistory(questionText, timeTaken, errorCount) {
 
   histories.appendChild(newRow);
 
-  let previousTests = JSON.parse(localStorage.getItem("testHistory")) || [];
+  let previousTests = JSON.parse(localStorage.getItem("ccc")) || [];
   previousTests.push({ questionText, timeTaken, errorCount });
   localStorage.setItem("testHistory", JSON.stringify(previousTests));
 
   displayHistory();
+  
 }
 
 function displayHistory() {
@@ -38,3 +41,5 @@ function displayHistory() {
     histories.appendChild(newRow);
   });
 }
+
+
